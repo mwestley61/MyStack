@@ -21,11 +21,21 @@
 
         public void Push(T value)
         {
+            if (Size == maximumLength)
+            {
+                throw new ExceededSizeException();
+            }
+
             stackArray[Size++] = value;
         }
 
         public T Pop()
         {
+            if (Size == 0)
+            {
+                throw new ExpenditureProhibitedException();
+            }
+
             return stackArray[--Size];
         }
     }
