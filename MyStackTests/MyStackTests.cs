@@ -32,5 +32,21 @@ namespace MyStackTests
             Assert.AreEqual(3, value);
             Assert.AreEqual(2, _s.Size);
         }
-    } 
+        [Test]
+        public void Too_much_Pop()
+        {
+            MyStack<int> s = new MyStack<int>(3);
+            Assert.Throws<ExpenditureProhibitedException>(() => s.Pop());
+        }
+
+        [Test]
+        public void Too_Much_Push()
+        {
+            MyStack<int> s = new MyStack<int>(3);
+            s.Push(1);
+            s.Push(2);
+            s.Push(3);
+            Assert.Throws<ExceededSizeException>(() => s.Push(4));
+        }
+    }
 }
