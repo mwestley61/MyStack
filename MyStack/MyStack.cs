@@ -18,5 +18,15 @@
             stackArray = new T[length];
         }
         #endregion
+
+        public void Push(T value)
+        {
+            stackArray[Size++] = value;
+        }
+
+        public T Pop()
+        {
+            return stackArray[--Size];
+        }
     }
 }
