@@ -22,8 +22,7 @@ namespace MyStackTests
 
         [Test]
         public void Push_Pop()
-        {
-            _s = new MyStack<int>(3);
+        { ;
             _s.Push(1);
             _s.Push(2);
             _s.Push(3);
@@ -35,18 +34,16 @@ namespace MyStackTests
         [Test]
         public void Too_much_Pop()
         {
-            MyStack<int> s = new MyStack<int>(3);
-            Assert.Throws<ExpenditureProhibitedException>(() => s.Pop());
+            Assert.Throws<ExpenditureProhibitedException>(() => _s.Pop());
         }
 
         [Test]
         public void Too_Much_Push()
         {
-            MyStack<int> s = new MyStack<int>(3);
-            s.Push(1);
-            s.Push(2);
-            s.Push(3);
-            Assert.Throws<ExceededSizeException>(() => s.Push(4));
+            _s.Push(1);
+            _s.Push(2);
+            _s.Push(3);
+            Assert.Throws<ExceededSizeException>(() => _s.Push(4));
         }
     }
 }
