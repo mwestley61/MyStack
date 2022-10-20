@@ -45,5 +45,23 @@ namespace MyStackTests
             _s.Push(3);
             Assert.Throws<ExceededSizeException>(() => _s.Push(4));
         }
+
+        [Test]
+        public void Peek_Exception()
+        {
+            Assert.Throws<ExpenditureProhibitedException>(() => _s.Peek());
+        }
+
+        [Test]
+        public void Peek_Element()
+        {
+            _s.Push(1);
+            _s.Push(2);
+            int value = _s.Peek();
+
+            Assert.AreEqual(2, value);
+            Assert.AreEqual(2, _s.Size);
+        }
+
     }
 }
