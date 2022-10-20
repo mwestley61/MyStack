@@ -38,5 +38,15 @@
 
             return stackArray[--Size];
         }
+
+        public T Peek()
+        {
+            if (Size == 0)
+            {
+                throw new ExpenditureProhibitedException();
+            }
+
+            return stackArray[Size - 1];
+        }
     }
 }
